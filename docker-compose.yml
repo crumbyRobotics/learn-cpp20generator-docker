@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  learn-generator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: learn-generator
+    container_name: learn-generator
+    volumes:
+      - type: bind
+        source: .
+        target: /learn-generator
+    stdin_open: true
+    tty: true
+    working_dir: /learn-generator/src/build
